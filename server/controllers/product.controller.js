@@ -31,9 +31,9 @@ exports.getProductById = async (req, res) => {
   const { id } = req.params;
   try {
     const product = await Product.findById(id).select("-_id -__v");
-    return res.status(200).json({
-      product,
-    });
+    return res.status(200).json(
+      product
+    );
   } catch (error) {
     return res
       .status(500)
